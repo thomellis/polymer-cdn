@@ -309,9 +309,13 @@ respectively.
        * @param {CustomEvent} event A tap event.
        */
       _onTap: function(event) {
-        if (Polymer.Gestures.findOriginalTarget(event) === this) {
-          this.open();
-        }
+        //if (Polymer.Gestures.findOriginalTarget(event) === this) {
+        //  this.open();
+        //}
+		var targetElement = Polymer.dom(event).localTarget;
+		if(targetElement === this) {
+			this.open();
+		}
       },
 
       /**
